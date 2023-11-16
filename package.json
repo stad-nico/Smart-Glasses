@@ -4,8 +4,8 @@
 	"description": "",
 	"main": "build/main.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
-		"start": "npm run compile && electron .",
+		"start:windows": "npm run compile && npm run banner:windows && electron .",
+		"banner:windows": "chcp 65001 >nul && type BANNER",
 		"compile": "tsc --project tsconfig.json"
 	},
 	"keywords": [],
