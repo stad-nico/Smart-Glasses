@@ -1,0 +1,19 @@
+{
+	"name": "smart-glasses",
+	"version": "0.0.1",
+	"description": "",
+	"main": "build/main.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "npm run compile && electron .",
+		"compile": "tsc --project tsconfig.json"
+	},
+	"keywords": [],
+	"author": "Nicolas Stadler",
+	"license": "ISC",
+	"devDependencies": {
+		"@types/electron": "^1.6.10",
+		"electron": "^27.1.0",
+		"typescript": "^5.2.2"
+	}
+}
