@@ -4,15 +4,29 @@
 	"description": "",
 	"main": "build/main.js",
 	"scripts": {
-		"start:windows": "npm run compile && npm run banner:windows && electron .",
+		"start": "electron .",
+		"start:windows": "npm run build:windows && npm run banner:windows && electron .",
+		"start:linux": "",
+		"build:windows": "npm run compile && npm run bundle && npm run copy:windows",
+		"build:linux": "",
 		"banner:windows": "chcp 65001 >nul && type BANNER",
-		"compile": "tsc --project tsconfig.json"
+		"banner:linux": "",
+		"compile": "npm run compile:backend && npm run compile:frontend",
+		"compile:backend": "tsc --project tsconfig.backend.json",
+		"compile:frontend": "tsc --project tsconfig.frontend.json",
+		"bundle": "npm run bundle:frontend",
+		"bundle:frontend": "browserify --entry build/frontend/index.js --outfile build/bundle.js",
+		"copy:windows": "copy \"index.html\" \"build/index.html\" >nul",
+		"copy-linux": ""
 	},
 	"keywords": [],
 	"author": "Nicolas Stadler",
 	"license": "ISC",
 	"devDependencies": {
-		"@types/electron": "^1.6.10",
+		"@types/electron": "^1.6.10"
+	},
+	"dependencies": {
+		"browserify": "^17.0.0",
 		"electron": "^27.1.0",
 		"typescript": "^5.2.2"
 	}

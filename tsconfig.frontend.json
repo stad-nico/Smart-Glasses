@@ -1,0 +1,9 @@
+{
+	"compilerOptions": {
+		"outDir": "build/frontend",
+		"module": "CommonJS",
+		"rootDir": "src/frontend",
+		"skipLibCheck": true
+	},
+	"exclude": ["src/backend/**", "node_modules/**"]
+}
