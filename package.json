@@ -8,7 +8,7 @@
 		"start:windows": "npm run build:windows && npm run banner:windows && electron .",
 		"start:linux": "npm run build:linux && npm run banner:linux && electron .",
 		"build:windows": "npm run compile && npm run bundle && npm run copy:windows",
-		"build:linux": "npm run compile && npm run bundle && npm run copy:windows",
+		"build:linux": "npm run compile && npm run bundle && npm run copy:linux",
 		"banner:windows": "chcp 65001 >nul && type BANNER",
 		"banner:linux": "cat BANNER",
 		"compile": "npm run compile:backend && npm run compile:frontend",
