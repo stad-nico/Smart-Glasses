@@ -17,7 +17,7 @@
 		"bundle": "npm run bundle:frontend",
 		"bundle:frontend": "browserify --entry build/frontend/index.js --outfile build/bundle.js",
 		"copy:windows": "copy \"index.html\" \"build/index.html\" >nul",
-		"copy-linux": "cp index.html build/index.html"
+		"copy:linux": "cp index.html build/index.html"
 	},
 	"keywords": [],
 	"author": "Nicolas Stadler",
