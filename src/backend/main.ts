@@ -8,7 +8,6 @@ function createWindow(): BrowserWindow {
 		fullscreen: true,
 	});
 
-	// window.maximize();
 	window.loadFile("build/index.html");
 
 	return window;

@@ -6,18 +6,18 @@
 	"scripts": {
 		"start": "electron .",
 		"start:windows": "npm run build:windows && npm run banner:windows && electron .",
-		"start:linux": "",
+		"start:linux": "npm run build:linux && npm run banner:linux && electron .",
 		"build:windows": "npm run compile && npm run bundle && npm run copy:windows",
-		"build:linux": "",
+		"build:linux": "npm run compile && npm run bundle && npm run copy:windows",
 		"banner:windows": "chcp 65001 >nul && type BANNER",
-		"banner:linux": "",
+		"banner:linux": "cat BANNER",
 		"compile": "npm run compile:backend && npm run compile:frontend",
 		"compile:backend": "tsc --project tsconfig.backend.json",
 		"compile:frontend": "tsc --project tsconfig.frontend.json",
 		"bundle": "npm run bundle:frontend",
 		"bundle:frontend": "browserify --entry build/frontend/index.js --outfile build/bundle.js",
 		"copy:windows": "copy \"index.html\" \"build/index.html\" >nul",
-		"copy-linux": ""
+		"copy-linux": "cp index.html build/index.html"
 	},
 	"keywords": [],
 	"author": "Nicolas Stadler",
